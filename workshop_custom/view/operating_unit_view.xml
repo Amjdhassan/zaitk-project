@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_operating_unit_form" model="ir.ui.view">
+        <field name="name">Branch.unit.form</field>
+        <field name="model">operating.unit</field>
+        <field name="arch" type="xml">
+            <form string="Branches"  >
+                <sheet>
+                    <group name="main_group" col="4">
+                    <field name="name"/>
+                    <field name="code"/>
+                    <field name="active"/>
+                        <field name="area_id"/>
+
+                    </group>
+
+
+<notebook>
+    <page string="technicians">
+
+            <field name="tec_id" >
+            <tree>
+
+                <field name="name"/>
+                <field name="phone"/>
+
+
+
+            </tree>
+                <form>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                        </group>
+
+
+                        <group>
+                            <field name="phone"/>
+                        </group>
+
+
+                         </group>
+                </form>
+
+            </field>
+
+    </page>
+
+</notebook>
+         <notebook>
+                <page string="Partner">
+                    <group>
+                        <field name="partner_id"/>
+                    </group>
+                </page>
+        </notebook>
+
+
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread" options="{'post_refresh': 'recipients'}"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_operating_unit_tree" model="ir.ui.view">
+        <field name="name">Branch.unit.tree</field>
+        <field name="model">operating.unit</field>
+        <field name="arch" type="xml">
+            <tree string="WorkShopS">
+                <field name="code"/>
+                <field name="name"/>
+                <field name="area_id"/>
+            </tree>
+        </field>
+    </record>
+    <record id="view_operating_unit_search" model="ir.ui.view">
+        <field name="name">Branch.unit.search</field>
+        <field name="model">operating.unit</field>
+        <field name="arch" type="xml">
+            <search string="Search Operating Unit">
+                <field name="name" string="WorkShop"/>
+                <field name="code" string="Code"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_operating_unit_tree" model="ir.actions.act_window">
+        <field name="name">WorkShop</field>
+        <field name="res_model">operating.unit</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+          <p class="oe_view_nocontent_create">
+            Click to start a new WorkShop .
+          </p>
+        </field>
+    </record>
+
+   <menuitem action="action_operating_unit_tree"
+             id="menu_action_operating_unit_tree"
+             parent="base.menu_users"
+             groups="workshop_custom.group_partnership_custom_admin"/>
+             />
+</odoo>

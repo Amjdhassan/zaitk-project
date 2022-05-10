@@ -1,0 +1,11 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_root_partner,User Access,model_operating_unit,workshop_custom.group_partnership_custom_user,1,1,1,1
+access_root_pay_sch,User Access pay,model_custom_technicians,workshop_custom.group_partnership_custom_user,1,1,1,1
+
+
+
+
+access_root_partner_admin,Admin Access,model_operating_unit,workshop_custom.group_partnership_custom_admin,1,1,1,1
+access_root_pay_sch_admin,Admin Access pay,model_custom_technicians,workshop_custom.group_partnership_custom_admin,1,1,1,1
+access_root_custom_area_admin,Admin Access pay,model_custom_area,workshop_custom.group_partnership_custom_admin,1,1,1,1
+
